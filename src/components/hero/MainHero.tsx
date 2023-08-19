@@ -2,7 +2,7 @@ import { Component } from "solid-js";
 
 const MainHero: Component = () => {
     return (
-        <div class="w-full h-96 bg-gray-100">
+        <div class="w-full h-[80vh] bg-gray-100">
 
         </div>
     )

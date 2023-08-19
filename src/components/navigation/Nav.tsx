@@ -1,7 +1,7 @@
 import { A } from "@solidjs/router";
 import { Component, For, createSignal } from "solid-js";
 import Logo from "../../assets/img/Perduco-Law-Logo.png"
-import { IoMenuOutline, IoCloseOutline} from 'solid-icons/io'
+import { IoMenuOutline, IoCloseOutline, IoChevronDownOutline} from 'solid-icons/io'
 
 const Nav: Component = () => {
     const [toggleMobileMenu,setToggleMobileMenu] = createSignal(false);
@@ -63,7 +63,7 @@ const Nav: Component = () => {
                     <div class="lg:block hidden">
                         <ul class="w-full flex gap-12">
                             <For each={Links}>{
-                                (l) => <A href={l.link}><li>{l.name}</li></A>
+                                (l) => l.name === 'Services' ? <li class="flex gap-2 items-center"><p>{l.name}</p><p class="pt-1"><IoChevronDownOutline /></p></li>: <A href={l.link}><li>{l.name}</li></A>
                             }</For>
                         </ul>
                     </div>
