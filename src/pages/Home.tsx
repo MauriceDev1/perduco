@@ -1,10 +1,11 @@
 import { Component } from "solid-js";
+import MainHero from "../components/hero/MainHero";
 
 const Home: Component = () => {
     return (
-        <div>
-
-        </div>
+        <>
+            <MainHero />
+        </>
     )
 } 
 

@@ -1,7 +1,7 @@
 import { Component } from "solid-js";
 import InnerHero from "../components/hero/InnerHero";
 
-const About: Component = () => {
+const Team:Component = () => {
     return (
         <>
             <InnerHero />
@@ -9,4 +9,4 @@ const About: Component = () => {
     )
 }
 
-export default About;
+export default Team;

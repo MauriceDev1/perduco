@@ -1,8 +1,11 @@
-const Contact = () => {
-    return (
-        <div>
+import { Component } from "solid-js";
+import InnerHero from "../components/hero/InnerHero";
 
-        </div>
+const Contact:Component = () => {
+    return (
+        <>
+            <InnerHero />
+        </>
     )
 }
 
