@@ -1,7 +1,13 @@
 import { A } from "@solidjs/router";
-import { Component } from "solid-js"
+import { Component, createSignal } from "solid-js"
 
 const ComplaintPolicy:Component = () => {
+    const [toggleModalForm,setToggleModalForm] = createSignal(false);
+
+    const openComplaintForm = () => {
+
+    };
+
     return (
         <div class="w-full bg-gray-50 flex justify-center py-10">
             <div class="w-10/12">
@@ -74,6 +80,107 @@ const ComplaintPolicy:Component = () => {
                         regularly by the Firm.
                     </p>
                 </div>
+                <h2 class="text-2xl py-3">
+                    What to do if we cannot resolve your complaint
+                </h2>
+                <p>
+                    If at the end of the eight week period, you have 
+                    not received a satisfactory response and remain 
+                    dissatisfied, you can refer the matter to the Legal 
+                    Ombudsman who can consider your complaint.
+                    <br /><br />
+                    The Legal Ombudsman can help you if we are unable to 
+                    resolve your complaint ourselves. They will look at 
+                    your complaint independently and it will not affect 
+                    how we handle your case.
+                    <br /><br />
+                    Before accepting a complaint for investigation, the 
+                    Legal Ombudsman will check that you have tried to 
+                    resolve your complaint with us first. If you have, 
+                    then you must take your complaint to the Legal 
+                    Ombudsman:
+                </p>
+                <ul class="list-inside list-disc py-3">
+                    <li>
+                        Within six months of receiving our final response 
+                        to your complaintand
+                    </li>
+                    <li>
+                        No more than one year from the date of the act or 
+                        omission being complained about; or
+                    </li>
+                    <li>
+                        No more than one year from the date when you should 
+                        reasonably have known that there was cause for complaint.
+                    </li>
+                </ul>
+                <h2 class="text-2xl py-3">
+                    For more information about the Legal Ombudsman contact:
+                </h2>
+                <ul>
+                    <li>
+                        <a href="www.legalombudsman.org.uk" class="text-red-600">www.legalombudsman.org.uk</a>
+                    </li>
+                    <li>
+                        Call: <a href="tel:0300 555 0333" class="text-red-600">0300 555 0333</a> between 9.00 to 17.00.
+                    </li>
+                    <li>
+                        Email: <a href="mailto:enquiries@legalombudsman.org.uk" class="text-red-600">enquiries@legalombudsman.org.uk</a>
+                    </li>
+                    <li>
+                        Legal Ombudsman PO Box 6806, Wolverhampton, WV1 9WJ
+                    </li>
+                </ul>
+                <h2 class="text-2xl py-3">
+                    What to do if you are unhappy with our behaviour
+                </h2>
+                <p>
+                    The Solicitors Regulation Authority can help if you are concerned 
+                    about our behaviour. This could be for things like dishonesty, taking 
+                    or losing your money or treating you unfairly because of your age, a 
+                    disability or other characteristic. Visit their website to see how 
+                    you can raise your concerns with the Solicitors Regulation Authority.
+                </p>
+                <h2 class="text-2xl py-3">
+                    Complaints About Fees
+                </h2>
+                <p>
+                    If you are dissatisfied with our bill, you have the right to apply to 
+                    the High Court for an assessment of our charges by an Officer of the 
+                    Court under ss. 70, 71 and 72 of the Solicitors Act 1974. We hope that 
+                    before making such an application you would first use our complaints 
+                    procedure explained above.
+                </p>
+                <h2 class="text-2xl py-3">
+                    Complaints about Misconduct
+                </h2>
+                <p>
+                    If you have any concerns about our conduct or breach of the SRA Code 
+                    or Conduct, you can also contact our regulatory body, the Solicitors 
+                    Regulation Authority. Their details are:
+                </p>
+                <h2 class="text-2xl py-3">
+                    The Solicitors Regulation Authority
+                </h2>
+                <p>
+                    The Cube
+                    <br />
+                    Wharfside Street
+                    <br />
+                    Birmingham
+                    <br />
+                    B1 1RN
+                    <br />
+                    <a class="text-red-600" href="tel:0370 606 2555">0370 606 2555</a>
+                    <br/>
+                    <A target="_blank" class="text-red-600" href="http://www.sra.org.uk/consumers/problems/report-solicitor.page">http://www.sra.org.uk/consumers/problems/report-solicitor.page</A>
+                </p>
+                <button
+                    class="bg-black text-white h-9 px-5 rounded-sm mt-5"
+                    onClick={openComplaintForm}
+                >
+                    Client Complaint Form
+                </button>
             </div>
         </div>
     )
