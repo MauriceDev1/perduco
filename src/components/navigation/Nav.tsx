@@ -125,12 +125,20 @@ const Nav: Component = () => {
                                 <li class="w-full py-4">Contact us</li>
                             </button>
                         </ul>
-                        <button 
-                            onclick={() => handleMobileLink('/register')}
-                            class="text-white h-10 rounded-sm bg-green-500 hover:bg-green-600 w-full absolute bottom-10 bg-lue-400"
-                        >
-                            Register
-                        </button>
+                        <div class="w-full absolute flex flex-wrap bottom-5 gap-y-4">
+                            <button 
+                                onclick={() => handleMobileLink('/register')}
+                                class="text-white h-10 rounded-sm border border-white w-full bg-lue-400"
+                            >
+                                Login
+                            </button>
+                            <button 
+                                onclick={() => handleMobileLink('/register')}
+                                class="text-white h-10 rounded-sm bg-black border border-black hover:bg-gray-900 w-full bg-lue-400"
+                            >
+                                Register
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
