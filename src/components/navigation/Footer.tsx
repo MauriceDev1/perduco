@@ -41,7 +41,7 @@ const Footer: Component = () => {
         {
             id: 2,
             name: 'Privacy Policy',
-            link: '',
+            link: 'privacy_policy',
         },
     ];
 

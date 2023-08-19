@@ -6,12 +6,12 @@ const Contact:Component = () => {
     return (
         <>
             <InnerHero />
-            <div class="w-full py-16 bg-gray-50 flex justify-center">
-                <div class="w-10/12">
-                    <div class="w-2/3">
+            <div class="w-full py-16 bg-gray-50 flex flex-wrap justify-center">
+                <div class="w-11/12 sm:w-10/12 flex flex-wrap">
+                    <div class="w-full sm:w-2/3">
                         <ContactForm />
                     </div>
-                    <div class="w-1/3">
+                    <div class="w-full sm:w-1/3">
 
                     </div>
                 </div>
