@@ -44,10 +44,10 @@ const Nav: Component = () => {
                 <div class="w-10/12 flex justify-between text-white text-xs">
                     <div class="flex gap-5">
                         <div>
-                            Call: 0330 165 9735
+                            Call: <a href="tel:0330 165 9735">0330 165 9735</a>
                         </div>
                         <div>
-                            Email: info@perducolaw.co.uk
+                            Email: <a href="mailto:info@perducolaw.co.uk">info@perducolaw.co.uk</a>
                         </div>
                     </div>
                     <div>

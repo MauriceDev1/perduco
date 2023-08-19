@@ -36,7 +36,7 @@ const Footer: Component = () => {
         {
             id: 1,
             name: 'Complaints Procedure',
-            link: '',
+            link: 'complaints-policy',
         },
         {
             id: 2,
@@ -49,12 +49,12 @@ const Footer: Component = () => {
         {
             id: 1,
             name: '0330 165 9735',
-            link: '',
+            link: 'tel:0330 165 9735',
         },
         {
             id: 2,
             name: 'info@perducolaw.com',
-            link: '',
+            link: 'mailto:info@perducolaw.com',
         }
     ];
 
@@ -114,7 +114,7 @@ const Footer: Component = () => {
                         </h4>
                         <ul>
                             <For each={ContactLinks}>{
-                                (c) => <A href={c.link}><li class="py-1">{c.name}</li></A>
+                                (c) => <a href={c.link}><li class="py-1">{c.name}</li></a>
                             }</For>
                         </ul>
                     </div>
