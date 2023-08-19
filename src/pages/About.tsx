@@ -1,5 +1,6 @@
 import { Component } from "solid-js";
 import InnerHero from "../components/hero/InnerHero";
+import LegalImageOne from "../assets/img/tingey-injury-law-firm-L4YGuSg0fxs-unsplash.jpg"
 
 const About: Component = () => {
     return (
@@ -42,8 +43,71 @@ const About: Component = () => {
                                 names in the UK for family law, divorce, and finances.
                             </p>
                         </div>
-                        <div class="w-full sm:w-1/3 bg-gray-100 h-56 sm:h-auto">
+                        <div 
+                            class="w-full sm:w-1/3 bg-gray-100 h-56 sm:h-auto"
+                            style={{"background-image":`url(${LegalImageOne})`,"background-size":"cover"}}
+                        >
                             
+                        </div>
+                    </div>
+                    <div class="py-20 w-full">
+                        <h1 class="text-3xl text-center">
+                            Our Family Law Services
+                        </h1>
+                        <p class="text-center py-6">
+                            We have extensive experience and are experts in the following areas of family law:
+                        </p>
+                        <div class="w-full flex gap-3 pt-3">
+                            <div class="w-1/4 h-72 bg-gray-200 flex">
+                                <h3 class="m-auto text-xl">
+                                    Child Law
+                                </h3>
+                            </div>
+                            <div class="w-1/4 h-72 bg-gray-200 flex">
+                                <h3 class="m-auto text-xl">
+                                    Domestic Abuse
+                                </h3>
+                            </div>
+                            <div class="w-1/4 h-72 bg-gray-200 flex">
+                                <h3 class="m-auto text-xl">
+                                    Divorce
+                                </h3>
+                            </div>
+                            <div class="w-1/4 h-72 bg-gray-200 flex">
+                                <h3 class="m-auto text-xl">
+                                    Un-married Couples
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="w-full py-20 flex justify-center gap-x-10">
+                            <div class="w-1/3 bg-gray-200">
+
+                            </div>
+                            <div class="w-2/3">
+                                <h1 class="text-3xl text-center">
+                                    How we differ from traditional law firms
+                                </h1>
+                                <p class="py-6">
+                                    Perduco Law a team of family law specialists, 
+                                    is an alternative business structure, which means 
+                                    we are an original type of legal organisation 
+                                    brought in by the 2007 Legal Services Act. We’re a 
+                                    new breed of law firm created for one reason: to 
+                                    simplify the legal process and save you money.
+                                    <br /><br />
+                                    We follow a more transparent and cost-effective way 
+                                    of working to provide a simple and straightforward 
+                                    service for our clients. Our aim is to give you the 
+                                    tools you need and the result you deserve for a 
+                                    fraction of the price of our competitors.
+                                    <br /><br />
+                                    We have experienced family law legal specialists 
+                                    standing by to take your call and help you navigate 
+                                    your legal hurdles. Call us now on 
+                                    <a href="tel:0330 165 9735" class="text-red-600">0330 165 9735</a> or 
+                                    contact us online today and we’ll  call you right back.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
