@@ -1,9 +1,10 @@
 import { A } from "@solidjs/router";
-import { Component, For } from "solid-js";
+import { Component, For, createSignal } from "solid-js";
 import Logo from "../../assets/img/Perduco-Law-Logo.png"
-import { IoMenuOutline } from 'solid-icons/io'
+import { IoMenuOutline, IoCloseOutline} from 'solid-icons/io'
 
 const Nav: Component = () => {
+    const [toggleMobileMenu,setToggleMobileMenu] = createSignal(false);
 
     const Links = [
         {
@@ -31,7 +32,11 @@ const Nav: Component = () => {
             name: 'Contact',
             link: '/contact'
         },
-    ]
+    ];
+
+    const handleMobileLink = (e: string) => {
+
+    }
 
     return (
         <>
@@ -50,7 +55,7 @@ const Nav: Component = () => {
                     </div>
                 </div>
             </div>
-            <nav class="w-full flex justify-center py-2 sticky top-0 bg-white">
+            <nav class="w-full flex justify-center py-2 sticky top-0 bg-white shadow">
                 <div class="w-11/12 sm:w-10/12 flex justify-between items-center">
                     <div>
                         <img src={Logo} class="h-8"/>
@@ -63,18 +68,72 @@ const Nav: Component = () => {
                         </ul>
                     </div>
                     <div class="lg:flex gap-3 hidden">
-                        <button class="border h-9 px-5 rounded-sm">
-                            Login
-                        </button>
-                        <button class="border border-black h-9 px-5 text-white rounded-sm bg-black">
-                            Register
-                        </button>
+                        <A href="/login">
+                            <button class="border h-8 px-5 rounded-sm">
+                                Login
+                            </button>
+                        </A>
+                        <A href="/register">
+                            <button class="border border-black h-8 px-5 text-white rounded-sm bg-black">
+                                Register
+                            </button>
+                        </A>
                     </div>
-                    <div class="lg:hidden">
+                    <div class="lg:hidden" onClick={() => setToggleMobileMenu(true)}>
                         <IoMenuOutline class="text-2xl"/>
                     </div>
                 </div>
             </nav>
+            <div class={`${toggleMobileMenu() ? 'w-full' : 'w-0'} fixed top-0 left-0 h-screen overflow-hidden bg-opacity-70 bg-black z-40`}>
+                <button
+                    onClick={() => setToggleMobileMenu(false)} 
+                    class="z-50 text-white mt-5 ml-5">
+                    <IoCloseOutline class="text-3xl menuClose" 
+                    />
+                </button>
+                <div class={`fixed ${toggleMobileMenu() ? 'w-[300px]' : 'w-0'} h-screen flex overflow-hidden duration-300 ease-in-out z-30 top-0 right-0 bg-gray-800 2xl:hidden`}>
+                    <div class="w-10/12 relative mx-auto text-white">
+                        <ul class="">
+                            <button
+                                onClick={() => handleMobileLink('/')}
+                                class="w-full"
+                            >
+                                <li class="w-full py-4 border-b">Home</li>
+                            </button>
+                            <button
+                                onClick={() => handleMobileLink('/about')}
+                                class="w-full"
+                            >
+                                <li class="w-full py-4 border-b">About us</li>
+                            </button>
+                            <button
+                                onClick={() => handleMobileLink('/services')}
+                                class="w-full"
+                            >
+                                <li class="w-full py-4 border-b">Services</li>
+                            </button>
+                            <button
+                                onClick={() => handleMobileLink('/our_team')}
+                                class="w-full"
+                            >
+                                <li class="w-full py-4 border-b">Our Team</li>
+                            </button>
+                            <button
+                                onClick={() => handleMobileLink('/contact')}
+                                class="w-full"
+                            >
+                                <li class="w-full py-4">Contact us</li>
+                            </button>
+                        </ul>
+                        <button 
+                            onclick={() => handleMobileLink('/register')}
+                            class="text-white h-10 rounded-sm bg-green-500 hover:bg-green-600 w-full absolute bottom-10 bg-lue-400"
+                        >
+                            Register
+                        </button>
+                    </div>
+                </div>
+            </div>
         </>
     )
 }

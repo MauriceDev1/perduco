@@ -71,7 +71,7 @@ const Footer: Component = () => {
         },
         {
             id: 3,
-            icon: <IoCall />,
+            icon: <IoCall class="text-xl"/>,
             link: '',
         },
         {
