@@ -6,6 +6,7 @@ import PersonalSupport from "../assets/img/puzzle.png"
 import FixedFees from "../assets/img/judge.png"
 import { IoAdd, IoRemove } from "solid-icons/io";
 import WhyBackgroundImage from "../assets/img/why.jpg"
+import ServiceCarousel from "../components/genral/ServiceCarousel";
 
 const Home: Component = () => {
     const [whyState,setWhyState] = createSignal('children');
@@ -201,10 +202,14 @@ const Home: Component = () => {
             </div>
             <div class="w-full py-16 flex justify-center bg-gray-50">
                 <div class="w-10/12">
-                    <h1 class="text-3xl text-center">
+                    <h1 class="text-3xl text-center pb-6">
                         Our Areas of Expertise
                     </h1>
+                    <ServiceCarousel />
                 </div>
+            </div>
+            <div class="w-full py-16 flex justify-center bg-gray-50">
+
             </div>
         </>
     )
