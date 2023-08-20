@@ -1,6 +1,7 @@
 import { Component } from "solid-js";
 import InnerHero from "../components/hero/InnerHero";
 import TeamBackground from "../assets/img/team.jpg"
+import TeamIntro from "../assets/img/teamIntro.jpg"
 
 const Team:Component = () => {
     return (
@@ -32,9 +33,82 @@ const Team:Component = () => {
                                 clarity, resolution, and a path forward.
                             </p>
                         </div>
-                        <div class="w-1/3 bg-gray-100 relative">
+                        <div class="w-1/3 bg-gray-100 relative" style={{"background-image":`url(${TeamIntro})`,"background-size":"cover"}}>
                             <div class="w-full h-full bg-black bg-opacity-30 absolute">
 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full pt-16">
+                        <h1 class="text-3xl text-center pb-6">
+                            Meet the Team
+                        </h1>
+                        <div class="w-full flex gap-5">
+                            <div class="w-1/3">
+                                <div class="w-full bg-gray-100 h-72">
+
+                                </div>
+                            </div>
+                            <div class="w-1/3">
+                                <div class="w-full bg-gray-100 h-72">
+
+                                </div>
+                            </div>
+                            <div class="w-1/3">
+                                <div class="w-full bg-gray-100 h-72">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-full flex gap-5 pt-6">
+                            <div class="w-1/3">
+                                <div class="w-full bg-gray-100 h-72">
+
+                                </div>
+                            </div>
+                            <div class="w-1/3">
+                                <div class="w-full bg-gray-100 h-72">
+
+                                </div>
+                            </div>
+                            <div class="w-1/3">
+                                <div class="w-full bg-gray-100 h-72">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-full flex gap-5 pt-6">
+                            <div class="w-1/3">
+                                <div class="w-full bg-gray-100 h-72">
+
+                                </div>
+                            </div>
+                            <div class="w-1/3">
+                                <div class="w-full bg-gray-100 h-72">
+
+                                </div>
+                            </div>
+                            <div class="w-1/3">
+                                <div class="w-full bg-gray-100 h-72">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-full flex gap-5 pt-6">
+                            <div class="w-1/3">
+                                <div class="w-full bg-gray-100 h-72">
+
+                                </div>
+                            </div>
+                            <div class="w-1/3">
+                                <div class="w-full bg-gray-100 h-72">
+
+                                </div>
+                            </div>
+                            <div class="w-1/3">
+                                <div class="w-full bg-gray-100 h-72">
+
+                                </div>
                             </div>
                         </div>
                     </div>
