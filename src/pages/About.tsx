@@ -3,7 +3,10 @@ import InnerHero from "../components/hero/InnerHero";
 import LegalImageOne from "../assets/img/aboutIntro.jpg"
 import AboutBackground from "../assets/img/pexels-cottonbro-studio-4098367.jpg"
 import DiffrentImage from "../assets/img/about_diffrent.jpg"
-import DomesticAbuse from "../assets/img/pexels-mart-production-7699511.jpg"
+import FatherDaughter from "../assets/img/fatherDaughter.jpg"
+import AboutDivorce from "../assets/img/aboutDivorce.jpg"
+import AboutDomestic from "../assets/img/aboutDomestic2.jpg"
+import AboutUnmarriedCouple from "../assets/img/unmarriedCouple.jpg"
 
 const About: Component = () => {
     return (
@@ -63,7 +66,7 @@ const About: Component = () => {
                             We have extensive experience and are experts in the following areas of family law:
                         </p>
                         <div class="w-full flex flex-wrap sm:flex-nowrap sm:gap-3 pt-3">
-                            <div class="w-1/2 sm:w-1/4 h-72 bg-gray-200 flex relative">
+                            <div class="w-10/12 mb-5 sm:mb-0 m-auto sm:w-1/4 h-72 bg-gray-200 flex relative" style={{"background-image":`url(${FatherDaughter})`, "background-size":"cover"}}>
                                 <h3 class="m-auto text-xl z-20 text-white">
                                     Child Law
                                 </h3>
@@ -71,7 +74,7 @@ const About: Component = () => {
 
                                 </div>
                             </div>
-                            <div class="w-1/2 sm:w-1/4 h-72 bg-gray-200 flex relative" style={{"background-image":`url(${DomesticAbuse})`, "background-size":"cover"}}>
+                            <div class="w-10/12 mb-5 sm:mb-0 m-auto sm:w-1/4 h-72 bg-gray-200 flex relative" style={{"background-image":`url(${AboutDivorce})`, "background-size":"cover"}}>
                                 <h3 class="m-auto text-xl text-white z-20">
                                     Domestic Abuse
                                 </h3>
@@ -79,7 +82,7 @@ const About: Component = () => {
 
                                 </div>
                             </div>
-                            <div class="w-1/2 sm:w-1/4 h-72 bg-gray-200 flex relative" style={{"background-image":`url()`, "background-size":"cover"}}>
+                            <div class="w-10/12 mb-5 sm:mb-0 m-auto sm:w-1/4 h-72 bg-gray-200 flex relative" style={{"background-image":`url(${AboutDomestic})`, "background-size":"cover"}}>
                                 <h3 class="m-auto text-xl z-20 text-white">
                                     Divorce
                                 </h3>
@@ -87,7 +90,7 @@ const About: Component = () => {
 
                                 </div>
                             </div>
-                            <div class="w-1/2 sm:w-1/4 h-72 bg-gray-200 flex relative">
+                            <div class="w-10/12 m-auto sm:w-1/4 h-72 bg-gray-200 flex relative" style={{"background-image":`url(${AboutUnmarriedCouple})`, "background-size":"cover"}}>
                                 <h3 class="m-auto text-xl z-20 text-white">
                                     Un-married Couples
                                 </h3>

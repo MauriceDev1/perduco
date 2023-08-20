@@ -223,7 +223,7 @@ const Home: Component = () => {
                     </div>
                     <div class="flex pt-5 flex-wrap sm:flex-nowrap sm:gap-5">
                         <div class="w-full sm:w-1/2">
-                            <div class="w-full flex justify-between items-center bg-gray-200 px-5 rounded-sm mb-1">
+                            <div class="w-full flex justify-between items-center bg-red-600 text-white px-5 rounded-sm mb-1">
                                 <h2 class="text-lg py-6">
                                     Why are you different to a High Street Solicitor?
                                 </h2>

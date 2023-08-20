@@ -27,7 +27,7 @@ const ServiceCarousel:Component = () => {
                     <Slider options={options}>
                         <div class="w-full">
                             <div class="w-full bg-gray-100 h-80 relative overflow-hidden" style={{"background-image":`url(${FatherAndChild})`,"background-size":"cover"}}>
-                                <div class="absolute bg-black w-full h-full top-0 left-0 bottom-0 right-0 bg-opacity-40">
+                                <div class="absolute bg-black w-full h-full top-0 left-0 bottom-0 right-0 bg-opacity-30">
 
                                 </div>
                             </div>
@@ -52,7 +52,7 @@ const ServiceCarousel:Component = () => {
                         </div>
                         <div class="w-full">
                             <div class="w-full bg-gray-100 h-80 relative overflow-hidden" style={{"background-image":`url(${Divorce})`,"background-size":"cover"}}>
-                                <div class="absolute bg-black w-full h-full top-0 left-0 bottom-0 right-0 bg-opacity-40">
+                                <div class="absolute bg-black w-full h-full top-0 left-0 bottom-0 right-0 bg-opacity-30">
 
                                 </div>
                             </div>
@@ -78,7 +78,7 @@ const ServiceCarousel:Component = () => {
                         </div>
                         <div class="w-full">
                             <div class="w-full bg-gray-100 h-80 relative overflow-hidden" style={{"background-image":`url(${Domestic})`,"background-size":"cover"}}>
-                                <div class="absolute bg-black w-full h-full top-0 left-0 bottom-0 right-0 bg-opacity-40">
+                                <div class="absolute bg-black w-full h-full top-0 left-0 bottom-0 right-0 bg-opacity-30">
 
                                 </div>
                             </div>
@@ -100,7 +100,7 @@ const ServiceCarousel:Component = () => {
                         </div>
                         <div class="w-full">
                             <div class="w-full bg-gray-100 h-80 relative overflow-hidden" style={{"background-image":`url(${UnMarried})`,"background-size":"cover"}}>
-                                <div class="absolute bg-black w-full h-full top-0 left-0 bottom-0 right-0 bg-opacity-40">
+                                <div class="absolute bg-black w-full h-full top-0 left-0 bottom-0 right-0 bg-opacity-30">
 
                                 </div>
                             </div>
