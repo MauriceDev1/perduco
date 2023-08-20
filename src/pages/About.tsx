@@ -1,8 +1,8 @@
 import { Component } from "solid-js";
 import InnerHero from "../components/hero/InnerHero";
-import LegalImageOne from "../assets/img/legal-5293008_640.jpg"
+import LegalImageOne from "../assets/img/aboutIntro.jpg"
 import AboutBackground from "../assets/img/pexels-cottonbro-studio-4098367.jpg"
-import DiffrentImage from "../assets/img/pexels-karolina-grabowska-7875996.jpg"
+import DiffrentImage from "../assets/img/about_diffrent.jpg"
 import DomesticAbuse from "../assets/img/pexels-mart-production-7699511.jpg"
 
 const About: Component = () => {
@@ -47,29 +47,31 @@ const About: Component = () => {
                             </p>
                         </div>
                         <div 
-                            class="w-full sm:w-1/3 bg-gray-100 h-56 sm:h-auto"
+                            class="w-full sm:w-1/3 bg-gray-100 h-72 sm:h-auto relative"
                             style={{"background-image":`url(${LegalImageOne})`,"background-size":"cover"}}
                         >
-                            
+                            <div class="absolute w-full bg-opacity-40 h-full bg-black">
+
+                            </div>
                         </div>
                     </div>
-                    <div class="py-20 w-full">
+                    <div class="pt-20 w-full">
                         <h1 class="text-3xl text-center">
                             Our Family Law Services
                         </h1>
                         <p class="text-center py-6">
                             We have extensive experience and are experts in the following areas of family law:
                         </p>
-                        <div class="w-full flex gap-3 pt-3">
-                            <div class="w-1/4 h-72 bg-gray-200 flex relative">
+                        <div class="w-full flex flex-wrap sm:flex-nowrap sm:gap-3 pt-3">
+                            <div class="w-1/2 sm:w-1/4 h-72 bg-gray-200 flex relative">
                                 <h3 class="m-auto text-xl z-20 text-white">
                                     Child Law
                                 </h3>
-                                <div class="absolute bg-black bg-opacity-40 w-full h-full">
+                                <div class="absolute bg-black bg-opacity-30 w-full h-full">
 
                                 </div>
                             </div>
-                            <div class="w-1/4 h-72 bg-gray-200 flex relative" style={{"background-image":`url(${DomesticAbuse})`, "background-size":"cover"}}>
+                            <div class="w-1/2 sm:w-1/4 h-72 bg-gray-200 flex relative" style={{"background-image":`url(${DomesticAbuse})`, "background-size":"cover"}}>
                                 <h3 class="m-auto text-xl text-white z-20">
                                     Domestic Abuse
                                 </h3>
@@ -77,7 +79,7 @@ const About: Component = () => {
 
                                 </div>
                             </div>
-                            <div class="w-1/4 h-72 bg-gray-200 flex relative" style={{"background-image":`url()`, "background-size":"cover"}}>
+                            <div class="w-1/2 sm:w-1/4 h-72 bg-gray-200 flex relative" style={{"background-image":`url()`, "background-size":"cover"}}>
                                 <h3 class="m-auto text-xl z-20 text-white">
                                     Divorce
                                 </h3>
@@ -85,7 +87,7 @@ const About: Component = () => {
 
                                 </div>
                             </div>
-                            <div class="w-1/4 h-72 bg-gray-200 flex relative">
+                            <div class="w-1/2 sm:w-1/4 h-72 bg-gray-200 flex relative">
                                 <h3 class="m-auto text-xl z-20 text-white">
                                     Un-married Couples
                                 </h3>
@@ -94,11 +96,13 @@ const About: Component = () => {
                                 </div>
                             </div>
                         </div>
-                        <div class="w-full py-20 flex justify-center gap-x-10">
-                            <div class="w-1/3 bg-gray-200" style={{"background-image":`url(${DiffrentImage})`,"background-size":"cover"}}>
+                        <div class="w-full py-20 flex flex-wrap sm:flex-nowrap justify-center sm:gap-x-10">
+                            <div class="w-full sm:w-1/2 bg-gray-200 relative" style={{"background-image":`url(${DiffrentImage})`,"background-size":"cover"}}>
+                                <div class="w-full h-full absolute bg-black bg-opacity-30">
 
+                                </div>
                             </div>
-                            <div class="w-2/3">
+                            <div class="w-full sm:w-1/2">
                                 <h1 class="text-3xl text-center">
                                     How we differ from traditional law firms
                                 </h1>

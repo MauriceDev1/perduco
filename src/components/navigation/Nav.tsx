@@ -81,7 +81,7 @@ const Nav: Component = () => {
                     <div class="lg:block hidden">
                         <ul class="w-full flex gap-12">
                             <For each={Links}>{
-                                (l) => l.name === 'Services' ? <li class="flex gap-2 items-center"><p>{l.name}</p><p class="pt-1"><IoChevronDownOutline /></p></li>: <A href={l.link}><li id="linksChange" data-replace={l.name}><span>{l.name}</span></li></A>
+                                (l) => l.name === 'Services' ? <button class="flex gap-2 items-center hover:text-red-600"><p>{l.name}</p><p class="pt-1"><IoChevronDownOutline /></p></button>: <A href={l.link}><li id="linksChange" data-replace={l.name}><span>{l.name}</span></li></A>
                             }</For>
                         </ul>
                     </div>
@@ -112,7 +112,7 @@ const Nav: Component = () => {
                     <IoCloseOutline class="text-3xl menuClose" 
                     />
                 </button>
-                <div class={`fixed ${toggleMobileMenu() ? 'w-[300px]' : 'w-0'} h-screen flex overflow-hidden duration-300 ease-in-out z-30 top-0 right-0 bg-gray-800 2xl:hidden`}>
+                <div class={`fixed ${toggleMobileMenu() ? 'w-[300px]' : 'w-0'} h-screen flex overflow-hidden duration-300 ease-in-out z-30 top-0 right-0 2xl:hidden`} style={{"background-color":"#081B37"}}>
                     <div class="w-10/12 relative mx-auto text-white">
                         <ul class="">
                             <button
@@ -149,7 +149,8 @@ const Nav: Component = () => {
                         <div class="w-full absolute flex flex-wrap bottom-5 gap-y-4">
                             <button 
                                 onclick={() => handleMobileLink('/register')}
-                                class="text-white h-10 rounded-sm border border-white w-full bg-lue-400"
+                                class="text-white h-10 rounded-sm border w-full bg-lue-400"
+                                style={{"background-color":"#E63435","border-color":"#E63435"}}
                             >
                                 Login
                             </button>

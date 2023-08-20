@@ -349,7 +349,7 @@ const Home: Component = () => {
             <div class="w-full py-16 flex justify-center bg-gray-50">
                 <div class="w-10/12">
                     <h1 class="text-3xl text-center">
-                        Reviews
+                        Take a look at what our clients say:
                     </h1>
                 </div>
             </div>
