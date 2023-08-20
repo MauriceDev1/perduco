@@ -7,10 +7,11 @@ import FixedFees from "../assets/img/judge.png"
 import { IoAdd, IoRemove } from "solid-icons/io";
 import WhyBackgroundImage from "../assets/img/why.jpg"
 import ServiceCarousel from "../components/genral/ServiceCarousel";
+import Faqs from "../assets/img/Faqs.jpg"
 
 const Home: Component = () => {
     const [whyState,setWhyState] = createSignal('children');
-
+    const [faqState,setFaqState] = createSignal('solicitor');
     return (
         <>
             <MainHero />
@@ -65,15 +66,15 @@ const Home: Component = () => {
                     <h1 class="text-3xl text-center pb-10">
                         Why Choose Perduco Law?
                     </h1>
-                    <div class="w-full flex gap-5">
+                    <div class="w-full flex flex-wrap sm:flex-nowrap sm:gap-5">
                         <div class="w-1/2 bg-gray-100 relative flex" style={{"background-image":`url(${WhyBackgroundImage})`,"background-size":"cover"}}>
                             <div class="bg-black w-full h-full bg-opacity-30 absolute top-0 left-0">
 
                             </div>
                         </div>
-                        <div class="w-1/2">
+                        <div class="w-full sm:w-1/2">
                             <div class="flex justify-between items-center bg-gray-200 px-5 rounded-sm mb-1">
-                                <h2 class="text-xl py-6">
+                                <h2 class="text-lg py-6">
                                     We Specialise In Children & Family Law
                                 </h2>
                                 {whyState() === 'children' 
@@ -97,7 +98,7 @@ const Home: Component = () => {
                                 </p>
                             </div>
                             <div class="flex justify-between items-center bg-gray-200 px-5 rounded-sm">
-                                <h2 class="text-xl py-6">
+                                <h2 class="text-lg py-6">
                                     We Only Work on a Fixed Fee Basis
                                 </h2>
                                 {whyState() === 'fee' 
@@ -121,7 +122,7 @@ const Home: Component = () => {
                                 </p>
                             </div>
                             <div class="flex justify-between items-center bg-gray-200 px-5 rounded-sm">
-                                <h2 class="text-xl py-6">
+                                <h2 class="text-lg py-6">
                                     We speak to you in a Language you will understand
                                 </h2>
                                 {whyState() === 'language' 
@@ -146,7 +147,7 @@ const Home: Component = () => {
                                 </p>
                             </div>
                             <div class="flex justify-between items-center bg-gray-200 px-5 rounded-sm">
-                                <h2 class="text-xl py-6">
+                                <h2 class="text-lg py-6">
                                     We Stand Out from the Crowd
                                 </h2>
                                 {whyState() === 'crowd' 
@@ -172,7 +173,7 @@ const Home: Component = () => {
                                 </p>
                             </div>
                             <div class="flex justify-between items-center bg-gray-200 px-5 rounded-sm">
-                                <h2 class="text-xl py-6">
+                                <h2 class="text-lg py-6">
                                     We Care
                                 </h2>
                                 {whyState() === 'care' 
@@ -208,8 +209,149 @@ const Home: Component = () => {
                     <ServiceCarousel />
                 </div>
             </div>
-            <div class="w-full py-16 flex justify-center bg-gray-50">
+            <div class="w-full pt-5 pb-16 flex justify-center bg-gray-50">
+                <div class="w-10/12">
+                    <div class="w-full">
+                        <h1 class="text-3xl text-center">FAQ</h1>
+                        <p class="py-6 sm:px-40 text-center">
+                            We are here to help and assist you, so if the answers 
+                            to your questions have not been covered here – the 
+                            quickest way would be to give us a call. Alternatively, 
+                            you can fill out our contact form by clicking the button 
+                            below.
+                        </p>
+                    </div>
+                    <div class="flex pt-5 flex-wrap sm:flex-nowrap sm:gap-5">
+                        <div class="w-full sm:w-1/2">
+                            <div class="w-full flex justify-between items-center bg-gray-200 px-5 rounded-sm mb-1">
+                                <h2 class="text-lg py-6">
+                                    Why are you different to a High Street Solicitor?
+                                </h2>
+                                {faqState() === 'solicitor' 
+                                    ? 
+                                        <IoRemove />
+                                    : 
+                                        <button
+                                            onClick={() => setFaqState('solicitor')}
+                                        >
+                                            <IoAdd /> 
+                                        </button>
+                                    }
+                            </div>
+                            <div class={`${faqState() === "solicitor" ? "h-40" : "h-0"} overflow-hidden duration-300 ease-in-out mb-1`}>
+                                <p class="p-5">
+                                    We charge a fixed fee for our service. That means you know 
+                                    exactly what you’re going to pay before starting the process.
+                                </p>
+                            </div>
+                            <div class="flex justify-between items-center bg-gray-200 px-5 rounded-sm">
+                                <h2 class="text-lg py-6">
+                                    What does the Caseworker do on my behalf?
+                                </h2>
+                                {faqState() === 'behalf' 
+                                    ? 
+                                        <IoRemove />
+                                    : 
+                                        <button
+                                            onClick={() => setFaqState('behalf')}
+                                        >
+                                            <IoAdd /> 
+                                        </button>
+                                }
+                            </div>
+                            <div class={`${faqState() === "behalf" ? "h-40" : "h-0"} overflow-hidden duration-300 ease-in-out mb-1`}>
+                                <p class="p-5">
+                                    The caseworker does all the legal legwork for the full 
+                                    duration of your case. We keep you informed of any changes 
+                                    and advise you on the next steps to ensure there are no 
+                                    surprises.
+                                </p>
+                            </div>
+                            <div class="flex justify-between items-center bg-gray-200 px-5 rounded-sm">
+                                <h2 class="text-lg py-6">
+                                    How long does the divorce take to complete?
+                                </h2>
+                                {faqState() === 'divorce' 
+                                    ? 
+                                        <IoRemove />
+                                    : 
+                                        <button
+                                            onClick={() => setFaqState('divorce')}
+                                        >
+                                            <IoAdd /> 
+                                        </button>
+                                }
+                            </div>
+                            <div class={`${faqState() === "divorce" ? "h-40" : "h-0"} overflow-hidden duration-300 ease-in-out mb-1`}>
+                                <p class="p-5">
+                                    If your divorce process is relatively straight forward, 
+                                    it can take anything from 5-7 months, depending on your 
+                                    circumstances.
+                                </p>
+                            </div>
+                            <div class="flex justify-between items-center bg-gray-200 px-5 rounded-sm">
+                                <h2 class="text-lg py-6">
+                                    What are my rights as a grandparent?
+                                </h2>
+                                {faqState() === 'grandparent' 
+                                    ? 
+                                        <IoRemove />
+                                    : 
+                                        <button
+                                            onClick={() => setFaqState('grandparent')}
+                                        >
+                                            <IoAdd /> 
+                                        </button>
+                                }
+                            </div>
+                            <div class={`${faqState() === "grandparent" ? "h-40" : "h-0"} overflow-hidden duration-300 ease-in-out mb-1`}>
+                                <p class="p-5">
+                                    Each case is different. However, as a grandparent you 
+                                    do not automatically receive the same rights as a parent. 
+                                    Perudco Law can assist you in protecting and 
+                                    exercising your rights as a Grandparent, whatever your 
+                                    situation. Learn more about how Perduco Law can help.
+                                </p>
+                            </div>
+                            <div class="flex justify-between items-center bg-gray-200 px-5 rounded-sm">
+                                <h2 class="text-lg py-6">
+                                    What does the judge take into consideration before making a decision
+                                </h2>
+                                {faqState() === 'judge' 
+                                    ? 
+                                        <IoRemove />
+                                    : 
+                                        <button
+                                            onClick={() => setFaqState('judge')}
+                                        >
+                                            <IoAdd /> 
+                                        </button>
+                                }
+                            </div>
+                            <div class={`${faqState() === "judge" ? "h-40" : "h-0"} overflow-hidden duration-300 ease-in-out`}>
+                                <p class="p-5">
+                                    A judge would normally look at the wishes and feelings 
+                                    of the child concerned – in relation to their age, physical, 
+                                    and emotional needs – and how capable each parent or 
+                                    guardian may be in providing the necessary care and 
+                                    attention required.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="w-1/2 bg-gray-100 relative" style={{"background-image":`url(${Faqs})`,"background-size":"cover"}}>
+                            <div class="w-full h-full absolute bg-black bg-opacity-40 top-0 bottom-0 left-0">
 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full py-16 flex justify-center bg-gray-50">
+                <div class="w-10/12">
+                    <h1 class="text-3xl text-center">
+                        Reviews
+                    </h1>
+                </div>
             </div>
         </>
     )

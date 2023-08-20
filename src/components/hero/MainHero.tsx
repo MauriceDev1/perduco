@@ -17,7 +17,7 @@ const MainHero: Component = () => {
                     and fees that are not by the hour.
                 </p>
                 <button class="h-10 px-5 bg-red-700 hover:bg-red-900 duration-500 rounded-sm text-white">
-                    Book A Appointment
+                    Book A Case Assessment
                 </button>
             </div>
         </div>

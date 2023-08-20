@@ -1,10 +1,11 @@
-import { A } from "@solidjs/router";
+import { A, useNavigate } from "@solidjs/router";
 import { Component, For, createSignal } from "solid-js";
 import Logo from "../../assets/img/Perduco-Law-Logo.png"
-import { IoMenuOutline, IoCloseOutline, IoChevronDownOutline} from 'solid-icons/io'
+import { IoMenuOutline, IoCloseOutline, IoChevronDownOutline, IoCalculatorOutline} from 'solid-icons/io'
 
 const Nav: Component = () => {
     const [toggleMobileMenu,setToggleMobileMenu] = createSignal(false);
+    const navigate = useNavigate();
 
     const Links = [
         {
@@ -35,7 +36,22 @@ const Nav: Component = () => {
     ];
 
     const handleMobileLink = (e: string) => {
-
+        if(e === '/'){
+            navigate('/')
+            setToggleMobileMenu(false)
+        }
+        if(e === '/about'){
+            navigate('/about')
+            setToggleMobileMenu(false)
+        }
+        if(e === '/our_team'){
+            navigate('/our_team')
+            setToggleMobileMenu(false)
+        }
+        if(e === '/contact'){
+            navigate('/contact')
+            setToggleMobileMenu(false)
+        }
     }
 
     return (
@@ -57,9 +73,11 @@ const Nav: Component = () => {
             </div>
             <nav class="w-full flex justify-center py-3 sticky top-0 bg-white shadow z-30">
                 <div class="w-11/12 sm:w-10/12 flex justify-between items-center">
-                    <div>
-                        <img src={Logo} class="h-8"/>
-                    </div>
+                    <A href="/">
+                        <div>
+                            <img src={Logo} class="h-8"/>
+                        </div>
+                    </A>
                     <div class="lg:block hidden">
                         <ul class="w-full flex gap-12">
                             <For each={Links}>{
@@ -67,7 +85,10 @@ const Nav: Component = () => {
                             }</For>
                         </ul>
                     </div>
-                    <div class="lg:flex gap-3 hidden">
+                    <div class="lg:flex gap-3 hidden items-center">
+                        <button class="text-gray-500">
+                            <IoCalculatorOutline class="text-2xl mr-5" />
+                        </button>
                         <A href="/login">
                             <button class="border h-8 px-5 rounded-sm border-black">
                                 Login
