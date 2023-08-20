@@ -199,6 +199,13 @@ const Home: Component = () => {
                     </div>
                 </div>
             </div>
+            <div class="w-full py-16 flex justify-center bg-gray-50">
+                <div class="w-10/12">
+                    <h1 class="text-3xl text-center">
+                        Our Areas of Expertise
+                    </h1>
+                </div>
+            </div>
         </>
     )
 } 

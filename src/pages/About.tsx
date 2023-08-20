@@ -1,7 +1,7 @@
 import { Component } from "solid-js";
 import InnerHero from "../components/hero/InnerHero";
 import LegalImageOne from "../assets/img/legal-5293008_640.jpg"
-import AboutBackground from "../assets/img/justice-1509436_1920.jpg"
+import AboutBackground from "../assets/img/pexels-cottonbro-studio-4098367.jpg"
 import DiffrentImage from "../assets/img/pexels-karolina-grabowska-7875996.jpg"
 import DomesticAbuse from "../assets/img/pexels-mart-production-7699511.jpg"
 
