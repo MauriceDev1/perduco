@@ -32,8 +32,10 @@ const Team:Component = () => {
                                 clarity, resolution, and a path forward.
                             </p>
                         </div>
-                        <div class="w-1/3 bg-gray-100">
+                        <div class="w-1/3 bg-gray-100 relative">
+                            <div class="w-full h-full bg-black bg-opacity-30 absolute">
 
+                            </div>
                         </div>
                     </div>
                 </div>

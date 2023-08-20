@@ -73,7 +73,7 @@ const Home: Component = () => {
                             </div>
                         </div>
                         <div class="w-full sm:w-1/2">
-                            <div class="flex justify-between items-center bg-gray-200 px-5 rounded-sm mb-1">
+                            <div class={`w-full flex justify-between items-center ${whyState() === 'children' ? 'bg-red-700 text-white' : 'bg-gray-200'} px-5 rounded-sm mb-1`}>
                                 <h2 class="text-lg py-6">
                                     We Specialise In Children & Family Law
                                 </h2>
@@ -97,7 +97,7 @@ const Home: Component = () => {
                                     issues in both simple and highly complex cases.
                                 </p>
                             </div>
-                            <div class="flex justify-between items-center bg-gray-200 px-5 rounded-sm">
+                            <div class={`w-full flex justify-between items-center ${whyState() === 'fee' ? 'bg-red-700 text-white' : 'bg-gray-200'} px-5 rounded-sm mb-1`}>
                                 <h2 class="text-lg py-6">
                                     We Only Work on a Fixed Fee Basis
                                 </h2>
@@ -121,7 +121,7 @@ const Home: Component = () => {
                                     extras.
                                 </p>
                             </div>
-                            <div class="flex justify-between items-center bg-gray-200 px-5 rounded-sm">
+                            <div class={`w-full flex justify-between items-center ${whyState() === 'language' ? 'bg-red-700 text-white' : 'bg-gray-200'} px-5 rounded-sm mb-1`}>
                                 <h2 class="text-lg py-6">
                                     We speak to you in a Language you will understand
                                 </h2>
@@ -146,7 +146,7 @@ const Home: Component = () => {
                                     know exactly where you stand.
                                 </p>
                             </div>
-                            <div class="flex justify-between items-center bg-gray-200 px-5 rounded-sm">
+                            <div class={`w-full flex justify-between items-center ${whyState() === 'crowd' ? 'bg-red-700 text-white' : 'bg-gray-200'} px-5 rounded-sm mb-1`}>
                                 <h2 class="text-lg py-6">
                                     We Stand Out from the Crowd
                                 </h2>
@@ -172,7 +172,7 @@ const Home: Component = () => {
                                     targeted to resolve your case, not to bill hours.
                                 </p>
                             </div>
-                            <div class="flex justify-between items-center bg-gray-200 px-5 rounded-sm">
+                            <div class={`w-full flex justify-between items-center ${whyState() === 'care' ? 'bg-red-700 text-white' : 'bg-gray-200'} px-5 rounded-sm mb-1`}>
                                 <h2 class="text-lg py-6">
                                     We Care
                                 </h2>
@@ -223,7 +223,7 @@ const Home: Component = () => {
                     </div>
                     <div class="flex pt-5 flex-wrap sm:flex-nowrap sm:gap-5">
                         <div class="w-full sm:w-1/2">
-                            <div class="w-full flex justify-between items-center bg-red-600 text-white px-5 rounded-sm mb-1">
+                            <div class={`w-full flex justify-between items-center ${faqState() === 'solicitor' ? 'bg-red-700 text-white' : 'bg-gray-200'} px-5 rounded-sm mb-1`}>
                                 <h2 class="text-lg py-6">
                                     Why are you different to a High Street Solicitor?
                                 </h2>
@@ -244,7 +244,7 @@ const Home: Component = () => {
                                     exactly what you’re going to pay before starting the process.
                                 </p>
                             </div>
-                            <div class="flex justify-between items-center bg-gray-200 px-5 rounded-sm">
+                            <div class={`w-full flex justify-between items-center ${faqState() === 'behalf' ? 'bg-red-700 text-white' : 'bg-gray-200'} px-5 rounded-sm mb-1`}>
                                 <h2 class="text-lg py-6">
                                     What does the Caseworker do on my behalf?
                                 </h2>
@@ -267,7 +267,7 @@ const Home: Component = () => {
                                     surprises.
                                 </p>
                             </div>
-                            <div class="flex justify-between items-center bg-gray-200 px-5 rounded-sm">
+                            <div class={`w-full flex justify-between items-center ${faqState() === 'divorce' ? 'bg-red-700 text-white' : 'bg-gray-200'} px-5 rounded-sm mb-1`}>
                                 <h2 class="text-lg py-6">
                                     How long does the divorce take to complete?
                                 </h2>
@@ -289,7 +289,7 @@ const Home: Component = () => {
                                     circumstances.
                                 </p>
                             </div>
-                            <div class="flex justify-between items-center bg-gray-200 px-5 rounded-sm">
+                            <div class={`w-full flex justify-between items-center ${faqState() === 'grandparent' ? 'bg-red-700 text-white' : 'bg-gray-200'} px-5 rounded-sm mb-1`}>
                                 <h2 class="text-lg py-6">
                                     What are my rights as a grandparent?
                                 </h2>
@@ -313,7 +313,7 @@ const Home: Component = () => {
                                     situation. Learn more about how Perduco Law can help.
                                 </p>
                             </div>
-                            <div class="flex justify-between items-center bg-gray-200 px-5 rounded-sm">
+                            <div class={`w-full flex justify-between items-center ${faqState() === 'judge' ? 'bg-red-700 text-white' : 'bg-gray-200'} px-5 rounded-sm mb-1`}>
                                 <h2 class="text-lg py-6">
                                     What does the judge take into consideration before making a decision
                                 </h2>
