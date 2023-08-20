@@ -154,7 +154,7 @@ const ContactForm:Component = () => {
                     class={`${formDataError().message ? 'border-red-400 placeholder:text-red-500 bg-red-50': 'placeholder:text-gray-500'} border w-full h-36 resize-none rounded p-2 outline-none`}
                 />
             </div>
-            <button class="w-full bg-black hover:bg-gray-800 duration-500 mt-7 h-9 text-white rounded-sm">
+            <button class="w-full bg-black hover:bg-gray-800 duration-500 mt-7 h-10 text-white rounded-sm">
                 Submit
             </button>
         </form>

@@ -1,11 +1,14 @@
 import { Component } from "solid-js";
 import InnerHero from "../components/hero/InnerHero";
-import LegalImageOne from "../assets/img/tingey-injury-law-firm-L4YGuSg0fxs-unsplash.jpg"
+import LegalImageOne from "../assets/img/legal-5293008_640.jpg"
+import AboutBackground from "../assets/img/justice-1509436_1920.jpg"
+import DiffrentImage from "../assets/img/pexels-karolina-grabowska-7875996.jpg"
+import DomesticAbuse from "../assets/img/pexels-mart-production-7699511.jpg"
 
 const About: Component = () => {
     return (
         <>
-            <InnerHero />
+            <InnerHero image={AboutBackground}/>
             <div class="w-full py-16 bg-gray-50 flex justify-center">
                 <div class="w-10/12">
                     <div class="w-full flex flex-wrap gap-0 sm:flex-nowrap sm:gap-3">
@@ -58,29 +61,41 @@ const About: Component = () => {
                             We have extensive experience and are experts in the following areas of family law:
                         </p>
                         <div class="w-full flex gap-3 pt-3">
-                            <div class="w-1/4 h-72 bg-gray-200 flex">
-                                <h3 class="m-auto text-xl">
+                            <div class="w-1/4 h-72 bg-gray-200 flex relative">
+                                <h3 class="m-auto text-xl z-20 text-white">
                                     Child Law
                                 </h3>
+                                <div class="absolute bg-black bg-opacity-40 w-full h-full">
+
+                                </div>
                             </div>
-                            <div class="w-1/4 h-72 bg-gray-200 flex">
-                                <h3 class="m-auto text-xl">
+                            <div class="w-1/4 h-72 bg-gray-200 flex relative" style={{"background-image":`url(${DomesticAbuse})`, "background-size":"cover"}}>
+                                <h3 class="m-auto text-xl text-white z-20">
                                     Domestic Abuse
                                 </h3>
+                                <div class="absolute bg-black bg-opacity-40 w-full h-full">
+
+                                </div>
                             </div>
-                            <div class="w-1/4 h-72 bg-gray-200 flex">
-                                <h3 class="m-auto text-xl">
+                            <div class="w-1/4 h-72 bg-gray-200 flex relative" style={{"background-image":`url()`, "background-size":"cover"}}>
+                                <h3 class="m-auto text-xl z-20 text-white">
                                     Divorce
                                 </h3>
+                                <div class="absolute bg-black bg-opacity-40 w-full h-full">
+
+                                </div>
                             </div>
-                            <div class="w-1/4 h-72 bg-gray-200 flex">
-                                <h3 class="m-auto text-xl">
+                            <div class="w-1/4 h-72 bg-gray-200 flex relative">
+                                <h3 class="m-auto text-xl z-20 text-white">
                                     Un-married Couples
                                 </h3>
+                                <div class="absolute bg-black bg-opacity-40 w-full h-full">
+
+                                </div>
                             </div>
                         </div>
                         <div class="w-full py-20 flex justify-center gap-x-10">
-                            <div class="w-1/3 bg-gray-200">
+                            <div class="w-1/3 bg-gray-200" style={{"background-image":`url(${DiffrentImage})`,"background-size":"cover"}}>
 
                             </div>
                             <div class="w-2/3">

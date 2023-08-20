@@ -40,7 +40,7 @@ const Nav: Component = () => {
 
     return (
         <>
-            <div class="hidden w-full bg-gray-800 py-2 lg:flex justify-center">
+            <div class="hidden w-full bg-gray-800 py-3 lg:flex justify-center">
                 <div class="w-10/12 flex justify-between text-white text-xs">
                     <div class="flex gap-5">
                         <div>
@@ -55,7 +55,7 @@ const Nav: Component = () => {
                     </div>
                 </div>
             </div>
-            <nav class="w-full flex justify-center py-2 sticky top-0 bg-white shadow">
+            <nav class="w-full flex justify-center py-2 sticky top-0 bg-white shadow z-30">
                 <div class="w-11/12 sm:w-10/12 flex justify-between items-center">
                     <div>
                         <img src={Logo} class="h-8"/>
@@ -69,7 +69,7 @@ const Nav: Component = () => {
                     </div>
                     <div class="lg:flex gap-3 hidden">
                         <A href="/login">
-                            <button class="border h-8 px-5 rounded-sm">
+                            <button class="border h-8 px-5 rounded-sm border-black">
                                 Login
                             </button>
                         </A>

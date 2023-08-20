@@ -1,8 +1,12 @@
 import { Component } from "solid-js";
 
-const InnerHero:Component = () => {
+interface InnerHeroProps {
+    image?: string
+}
+
+const InnerHero:Component<InnerHeroProps> = ({image}) => {
     return (
-        <div class="w-full bg-gray-100 h-96">
+        <div class="w-full bg-gray-100 h-96" style={{"background-image":`url(${image})`,"background-size":"cover"}}>
 
         </div>
     )
