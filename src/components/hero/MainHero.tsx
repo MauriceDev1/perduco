@@ -1,5 +1,6 @@
 import { Component } from "solid-js";
 import MainBackgroundImage from "../../assets/img/pexels-karolina-grabowska-7876299.jpg"
+import TrustPilot from "../../assets/img/TrustPilot.png"
 
 const MainHero: Component = () => {
     return (
@@ -19,6 +20,9 @@ const MainHero: Component = () => {
                 <button class="h-10 px-5 bg-red-700 hover:bg-red-900 duration-500 rounded-sm text-white">
                     Book A Case Assessment
                 </button>
+            </div>
+            <div class="absolute top-10 right-20">
+                <img src={TrustPilot} class="h-8"/>
             </div>
         </div>
     )
