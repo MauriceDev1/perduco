@@ -5,6 +5,7 @@ import PaymentPlan from "../assets/img/law.png"
 import PersonalSupport from "../assets/img/puzzle.png"
 import FixedFees from "../assets/img/judge.png"
 import { IoAdd, IoRemove } from "solid-icons/io";
+import WhyBackgroundImage from "../assets/img/why.jpg"
 
 const Home: Component = () => {
     const [whyState,setWhyState] = createSignal('children');
@@ -64,8 +65,10 @@ const Home: Component = () => {
                         Why Choose Perduco Law?
                     </h1>
                     <div class="w-full flex gap-5">
-                        <div class="w-1/2 bg-gray-200">
+                        <div class="w-1/2 bg-gray-100 relative flex" style={{"background-image":`url(${WhyBackgroundImage})`,"background-size":"cover"}}>
+                            <div class="bg-black w-full h-full bg-opacity-30 absolute top-0 left-0">
 
+                            </div>
                         </div>
                         <div class="w-1/2">
                             <div class="flex justify-between items-center bg-gray-200 px-5 rounded-sm mb-1">
