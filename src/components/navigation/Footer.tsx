@@ -88,7 +88,7 @@ const Footer: Component = () => {
                     <div class="w-full sm:w-1/5">
                         <img src={SRA} class="w-1/2"/>
                     </div>
-                    <div class="w-1/3 sm:w-1/5 pt-5 sm:pt-0">
+                    <div class="w-1/2 sm:w-1/5 pt-5 sm:pt-0">
                         <h4 class="font-semibold pb-3">
                             Services
                         </h4>
@@ -98,7 +98,7 @@ const Footer: Component = () => {
                             }</For>
                         </ul>
                     </div>
-                    <div class="w-1/3 sm:w-1/5 pt-5 sm:pt-0">
+                    <div class="w-1/2 sm:w-1/5 pt-5 sm:pt-0">
                         <h4 class="font-semibold pb-3">
                             Legal
                         </h4>
@@ -108,7 +108,7 @@ const Footer: Component = () => {
                             }</For>
                         </ul>
                     </div>
-                    <div class="w-1/3 sm:w-1/5 pt-5 sm:pt-0">
+                    <div class="w-1/2 sm:w-1/5 pt-5 sm:pt-0">
                         <h4 class="font-semibold pb-3">
                             Contact us
                         </h4>

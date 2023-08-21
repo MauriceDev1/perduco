@@ -8,6 +8,8 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import ComplaintPolicy from './pages/ComplaintPolicy';
+import ForgotPassword from './pages/ForgotPassword';
+import PageNotFound from './pages/PageNotFound';
 
 const App: Component = () => {
   return (
@@ -20,6 +22,8 @@ const App: Component = () => {
       <Route path="/complaints-policy" component={ComplaintPolicy} />
       <Route path="/login" component={Login} />
       <Route path="/register" component={Register} />
+      <Route path="/forgot_password" component={ForgotPassword} />
+      <Route path="*" component={PageNotFound} />
     </Routes>
   );
 };

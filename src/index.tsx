@@ -5,6 +5,7 @@ import './index.css';
 import App from './App';
 import { Router } from "@solidjs/router";
 import MainLayout from './layouts/MainLayout';
+import { ModalContextProvider } from './context/ModalContext';
 
 const root = document.getElementById('root');
 
@@ -16,8 +17,10 @@ if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
 
 render(() =>(
   <Router> 
-    <MainLayout>
-      <App />
-    </MainLayout>
+    <ModalContextProvider>
+      <MainLayout>
+        <App />
+      </MainLayout>
+    </ModalContextProvider>
   </Router>
 ), root!);

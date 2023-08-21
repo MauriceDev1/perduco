@@ -2,10 +2,13 @@ import { A, useNavigate } from "@solidjs/router";
 import { Component, For, createSignal } from "solid-js";
 import Logo from "../../assets/img/Perduco-Law-Logo.png"
 import { IoMenuOutline, IoCloseOutline, IoChevronDownOutline, IoCalculatorOutline} from 'solid-icons/io'
+import Calculator from "../modals/Calculator";
+import { useModalContext } from "../../context/ModalContext";
 
 const Nav: Component = () => {
     const [toggleMobileMenu,setToggleMobileMenu] = createSignal(false);
     const navigate = useNavigate();
+    const {setModalState} = useModalContext()
 
     const Links = [
         {
@@ -54,6 +57,10 @@ const Nav: Component = () => {
         }
     }
 
+    const handleCalculatorModal = () => {
+        setModalState(true);
+    }
+
     return (
         <>
             <div class="hidden w-full bg-gray-800 py-2 lg:flex justify-center">
@@ -86,7 +93,9 @@ const Nav: Component = () => {
                         </ul>
                     </div>
                     <div class="lg:flex gap-3 hidden items-center">
-                        <button class="text-gray-500">
+                        <button class="text-gray-500"
+                            onClick={handleCalculatorModal}
+                        >
                             <IoCalculatorOutline class="text-2xl mr-5" />
                         </button>
                         <A href="/login">
@@ -164,6 +173,7 @@ const Nav: Component = () => {
                     </div>
                 </div>
             </div>
+            <Calculator />
         </>
     )
 }
