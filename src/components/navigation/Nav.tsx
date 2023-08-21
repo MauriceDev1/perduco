@@ -4,6 +4,7 @@ import Logo from "../../assets/img/Perduco-Law-Logo.png"
 import { IoMenuOutline, IoCloseOutline, IoChevronDownOutline, IoCalculatorOutline} from 'solid-icons/io'
 import Calculator from "../modals/Calculator";
 import { useModalContext } from "../../context/ModalContext";
+import MenuImg from "../../assets/img/menuuImg.jpg"
 
 const Nav: Component = () => {
     const [toggleMobileMenu,setToggleMobileMenu] = createSignal(false);
@@ -26,6 +27,44 @@ const Nav: Component = () => {
             id: 3,
             name:  'Services',
             link: '',
+            links: [
+                {
+                    id: 1,
+                    name:'Family Law',
+                    link: '/family_law',
+                    links: [
+                        {
+                            id: '',
+                            name: '',
+                        }
+                    ]
+                },
+                {
+                    id: 2,
+                    name: 'Child Law',
+                    link: '',
+                },
+                {
+                    id: 3,
+                    name: 'Divorce',
+                    link: '',
+                },
+                {
+                    id: 4, 
+                    name: 'Financial Matters',
+                    link: '',
+                },
+                {
+                    id: 5,
+                    name: 'Domestic Abuse',
+                    link: '',
+                },
+                {
+                    id: 6,
+                    name: 'Un-married Couples',
+                    link: '',
+                },
+            ],
         },
         {
             id: 4,
@@ -34,6 +73,11 @@ const Nav: Component = () => {
         },
         {
             id: 5,
+            name: 'Careers',
+            link: '/careers'
+        },
+        {
+            id: 6,
             name: 'Contact us',
             link: '/contact'
         },
@@ -64,7 +108,7 @@ const Nav: Component = () => {
 
     return (
         <>
-            <div class="hidden w-full bg-gray-800 py-2 lg:flex justify-center">
+            <div class="hidden w-full bg-gray-800 lg:flex justify-center py-2">
                 <div class="w-10/12 flex justify-between text-white text-xs">
                     <div class="flex gap-5">
                         <div>
@@ -79,41 +123,57 @@ const Nav: Component = () => {
                     </div>
                 </div>
             </div>
-            <nav class="w-full flex justify-center py-3 sticky top-0 bg-white shadow z-30">
-                <div class="w-11/12 sm:w-10/12 flex justify-between items-center">
+            <nav class="w-full flex justify-center py-3 sticky top-0 bg-white shadow z-50 h-14">
+                <div class="w-11/12 lg:w-10/12 flex justify-between items-center">
                     <A href="/">
                         <div>
                             <img src={Logo} class="h-8"/>
                         </div>
                     </A>
                     <div class="lg:block hidden">
-                        <ul class="w-full flex gap-12">
+                        <ul class="w-full flex gap-1 lg:gap-3">
                             <For each={Links}>{
                                 (l) => l.name === 'Services' 
                                     ? 
                                         <button 
-                                            class="flex gap-2 items-center hover:text-red-600"
+                                            class="flex hover:text-red-600 h-14 px-5"
                                             onMouseEnter={() => setServiceSection(true)}
                                             onMouseLeave={() => setServiceSection(false)}
                                         >
-                                            <p>
-                                                {l.name}
-                                            </p>
-                                            <p class="pt-1">
-                                                <IoChevronDownOutline />
-                                            </p>
-                        {serviceSection()
-                            ?
-                                <div class="w-full h-64 bg-white absolute left-0 mt-72">
+                                            <div class="w-full flex gap-2 my-auto">
+                                                <p>
+                                                    {l.name}
+                                                </p>
+                                                <p class="pt-[6px]">
+                                                    <IoChevronDownOutline />
+                                                </p>
+                                            </div>
+                                            <div class={`w-full ${serviceSection() ? "h-72" : "h-0 hidden" } absolute duration-300 ease-in-out top-14 left-0 -z-10 shadow-b bg-white`}>
+                                                <div class="w-10/12 flex m-auto h-full py-5">
+                                                    <div class="w-1/4 h-full bg-gray-50 relative" style={{"background-image":`url(${MenuImg})`,"background-size":"cover"}}>
+                                                        <div class="w-full absolute h-full bg-black bg-opacity-30">
 
-                                </div>
-                            :
-                                null
-                        }
+                                                        </div>
+                                                    </div>
+                                                    <div class="w-1/4 border-r">
+                                                        <ul class="text-gray-500 text-start px-5 flex flex-col gap-5">
+                                                            <For each={Links[2].links}>{
+                                                                (s) => <li class=" hover:text-red-600">{s.name}</li>
+                                                            }</For>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="w-1/4 border-r">
+
+                                                    </div>
+                                                    <div class="w-1/4">
+
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </button>
                                     : 
-                                        <A href={l.link}>
-                                            <li id="linksChange" data-replace={l.name}>
+                                        <A href={l.link} class="h-14 flex z-40 px-5">
+                                            <li id="linksChange" class="my-auto" data-replace={l.name}>
                                                 <span>
                                                     {l.name}
                                                 </span>

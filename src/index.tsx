@@ -6,6 +6,8 @@ import App from './App';
 import { Router } from "@solidjs/router";
 import MainLayout from './layouts/MainLayout';
 import { ModalContextProvider } from './context/ModalContext';
+import { AssesModalContextProvider } from './context/AssesmentModal';
+import { ComplaintModalContextProvider } from './context/ComplaintContext';
 
 const root = document.getElementById('root');
 
@@ -17,10 +19,14 @@ if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
 
 render(() =>(
   <Router> 
-    <ModalContextProvider>
-      <MainLayout>
-        <App />
-      </MainLayout>
-    </ModalContextProvider>
+    <ComplaintModalContextProvider>
+      <AssesModalContextProvider>
+        <ModalContextProvider>
+            <MainLayout>
+              <App />
+            </MainLayout>
+        </ModalContextProvider>
+      </AssesModalContextProvider>
+    </ComplaintModalContextProvider>
   </Router>
 ), root!);

@@ -2,8 +2,11 @@ import { Component } from "solid-js";
 import MainBackgroundImage from "../../assets/img/pexels-karolina-grabowska-7876299.jpg"
 import TrustPilot from "../../assets/img/TrustPilot.png"
 import Stars from "../../assets/img/stars-4.5.png"
+import { useAssesModalContext } from "../../context/AssesmentModal";
 
 const MainHero: Component = () => {
+    const {setModalState} = useAssesModalContext();
+
     return (
         <div class="w-full flex h-[80vh] bg-gray-100 relative" style={{"background-image":`url(${MainBackgroundImage})`,"background-size":"cover"}}>
             <div class="w-full bg-black bg-opacity-50 absolute h-full">
@@ -18,7 +21,10 @@ const MainHero: Component = () => {
                     quality legal services with ethical transparent advice 
                     and fees that are not by the hour.
                 </p>
-                <button class="h-10 px-5 bg-red-700 hover:bg-red-900 duration-500 rounded-sm text-white">
+                <button 
+                    onClick={() => setModalState(true)}
+                    class="h-10 px-5 bg-red-700 hover:bg-red-900 duration-500 rounded-sm text-white"
+                >
                     Book A Case Assessment
                 </button>
             </div>

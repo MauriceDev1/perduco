@@ -1,13 +1,10 @@
 import { A } from "@solidjs/router";
 import { Component, createSignal } from "solid-js"
+import { useComplaintModalContext } from "../../context/ComplaintContext";
 
 const ComplaintPolicy:Component = () => {
-    const [toggleModalForm,setToggleModalForm] = createSignal(false);
-
-    const openComplaintForm = () => {
-
-    };
-
+    const {setModalState} = useComplaintModalContext();
+    
     return (
         <div class="w-full bg-gray-50 flex justify-center py-10">
             <div class="w-10/12">
@@ -177,7 +174,7 @@ const ComplaintPolicy:Component = () => {
                 </p>
                 <button
                     class="bg-black text-white h-9 px-5 rounded-sm mt-5"
-                    onClick={openComplaintForm}
+                    onClick={() => setModalState(true)}
                 >
                     Client Complaint Form
                 </button>
