@@ -1,9 +1,13 @@
-import { A } from "@solidjs/router";
-import { IoLogoFacebook, IoLogoGoogle } from "solid-icons/io";
+import { A, useNavigate } from "@solidjs/router";
+import { IoEye, IoEyeOffOutline, IoLogoFacebook, IoLogoGoogle } from "solid-icons/io";
 import { createSignal } from "solid-js";
+import useLogin from "../../hooks/useLogin";
+import cookie from "cookiejs";
+import { useAuthContext } from "../../context/AuthContext";
 
 const Login = () => {
     const [loading,setLoading] = createSignal(false);
+    const [showPassword,setShowPassword] = createSignal(false);
     const [formData,setFormData] = createSignal({
         email: '',
         password: '',
@@ -12,6 +16,13 @@ const Login = () => {
         email: '',
         password: '',
     });
+    const {
+        setIsAuth,
+        setUserId,
+        setUserEmail,
+    } = useAuthContext();
+    const {userLogin} = useLogin();
+    const navigate = useNavigate();
 
     const handleFormChange = (e: any) => {
         const {name,value} = e.currentTarget;
@@ -23,7 +34,7 @@ const Login = () => {
         setFormDataError((prv) => ({...prv,[name]:''}));
     };
 
-    const handleSubmitForm = (e: any) => {
+    const handleSubmitForm = async (e: any) => {
         e.preventDefault();
         const {
             email,
@@ -39,15 +50,28 @@ const Login = () => {
             return
         }
         setLoading(true);
-        alert(JSON.stringify(formData()));
-        setTimeout(() => {
+        const data = {
+            email: formData().email,
+            password: formData().password,
+        }
+        const result = await userLogin(data);
+        if(result.uid) {
+            cookie.set('auth', 'true' ,2);
+            cookie.set('userId', result.uid ,2);
+            setUserId(result.uid);
+            setIsAuth(true);
+            setUserEmail(data.email);
             setLoading(false);
-            setFormData({
-                email: '',
-                password: '',
-            });
-        }, 2000);
+            navigate('/profile')
+        } else {
+            setLoading(false);
+        }
     };
+
+    const handleShowPassword = (e: any) => {
+        e.preventDefault();
+        setShowPassword(!showPassword())
+    }
 
     return (
         <div class="w-full h-screen flex bg-slate-500 fixed">
@@ -94,15 +118,33 @@ const Login = () => {
                         <p class="py-2 px-1 text-gray-500">
                             Password
                         </p>
-                        <input 
-                            name="password"
-                            type="password"
-                            value={formData().password ? formData().password : ''}
-                            onChange={handleFormChange}
-                            onInput={handleFormErrorChange}
-                            placeholder={formDataError().password ? formDataError().password : 'Enter your password' }
-                            class={`${formDataError().password ? 'bg-red-50 border-red-400 placeholder:text-red-500' : '' } border w-full  rounded-sm h-9 outline-none px-2`}
-                        />
+                        <div class="w-full relative">
+                            <input 
+                                name="password"
+                                type={showPassword() ? "text" : "password"}
+                                value={formData().password ? formData().password : ''}
+                                onChange={handleFormChange}
+                                onInput={handleFormErrorChange}
+                                placeholder={formDataError().password ? formDataError().password : 'Enter your password' }
+                                class={`${formDataError().password ? 'bg-red-50 border-red-400 placeholder:text-red-500' : '' } border w-full  rounded-sm h-9 outline-none px-2`}
+                            />
+                            <div class="absolute  top-2 right-2 text-gray-300">
+                                {showPassword() 
+                                    ?
+                                        <button
+                                            onClick={handleShowPassword}
+                                        >
+                                            <IoEyeOffOutline class="text-lg" />
+                                        </button>
+                                    :
+                                        <button
+                                            onClick={handleShowPassword}
+                                        >
+                                            <IoEye class="text-lg" />
+                                        </button>
+                                }
+                            </div>
+                        </div>
                     </div>
                     <button class="w-full mt-7 text-white flex h-10 bg-gray-900 rounded-sm">
                         {loading() 

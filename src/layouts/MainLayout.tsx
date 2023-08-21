@@ -16,7 +16,7 @@ const MainLayout:Component<MainLayoutProps> = ({children}) => {
         <>
             <Nav />
             {children}
-            {location.pathname === '/login' || location.pathname === '/register' ? null :<Footer />}
+            {location.pathname === '/login' || location.pathname === '/register' || location.pathname === '/profile' ? null :<Footer />}
             <AssesmentModal />
             <ComplaintModal />
         </>

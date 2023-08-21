@@ -1,16 +1,21 @@
 import { A, useNavigate } from "@solidjs/router";
 import { Component, For, createSignal } from "solid-js";
 import Logo from "../../assets/img/Perduco-Law-Logo.png"
-import { IoMenuOutline, IoCloseOutline, IoChevronDownOutline, IoCalculatorOutline} from 'solid-icons/io'
+import { IoMenuOutline, IoCloseOutline, IoChevronDownOutline, IoCalculatorOutline, IoCaretDownOutline, IoCaretUpOutline} from 'solid-icons/io'
 import Calculator from "../modals/Calculator";
 import { useModalContext } from "../../context/ModalContext";
 import MenuImg from "../../assets/img/menuuImg.jpg"
+import { useAuthContext } from "../../context/AuthContext";
+import useLogout from "../../hooks/useLogout";
 
 const Nav: Component = () => {
     const [toggleMobileMenu,setToggleMobileMenu] = createSignal(false);
+    const [userMenu,setUserMenu] = createSignal(false);
     const navigate = useNavigate();
     const {setModalState} = useModalContext()
     const [serviceSection,setServiceSection] = createSignal(false)
+    const {isAuth} = useAuthContext()
+    const {logoutUser} = useLogout();
 
     const Links = [
         {
@@ -188,16 +193,64 @@ const Nav: Component = () => {
                         >
                             <IoCalculatorOutline class="text-2xl mr-5" />
                         </button>
-                        <A href="/login">
-                            <button class="border h-8 px-6 rounded-sm border-black">
-                                Login
-                            </button>
-                        </A>
-                        <A href="/register">
-                            <button class="border border-gray-900 h-8 px-6 text-white rounded-sm bg-gray-900">
-                                Register
-                            </button>
-                        </A>
+                        {isAuth()
+                            ?
+                                <>
+                                    <div class="flex relative gap-1 mr-3">
+                                        <div class="w-8 h-8 bg-gray-200 rounded-full">
+
+                                        </div>
+                                        {userMenu()
+                                            ?
+                                                <button
+                                                onClick={() => setUserMenu(false)}
+                                                    class="text-gray-200"
+                                                >
+                                                    <IoCaretUpOutline />
+                                                </button>
+                                            :
+                                                <button
+                                                onClick={() => setUserMenu(true)}
+                                                    class="text-gray-200"
+                                                >
+                                                    <IoCaretDownOutline />
+                                                </button>
+                                        }
+                                        <div class={userMenu() ? "w-48 rounded-sm bg-white top-12 absolute -left-20 px-3 py-1" : "hidden"}>
+                                            <ul class="flex-col flex">
+                                                <A href="/profile">
+                                                    <li class="w-full border-b py-1">User Profile</li>
+                                                </A>
+                                                <A href="/accounts">
+                                                    <li class="w-full border-b py-1">Accounts</li>
+                                                </A>
+                                                <A href="/settings">
+                                                    <li class="py-1">Settings</li>
+                                                </A>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <button 
+                                        onClick={logoutUser}
+                                        class="border border-gray-900 h-8 px-6 text-white rounded-sm bg-gray-900"
+                                    >
+                                        Logout
+                                    </button>
+                                </>
+                            :
+                                <>
+                                    <A href="/login">
+                                        <button class="border h-8 px-6 rounded-sm border-black">
+                                            Login
+                                        </button>
+                                    </A>
+                                    <A href="/register">
+                                        <button class="border border-gray-900 h-8 px-6 text-white rounded-sm bg-gray-900">
+                                            Register
+                                        </button>
+                                    </A>
+                                </>
+                        }
                     </div>
                     <div class="lg:hidden" onClick={() => setToggleMobileMenu(true)}>
                         <IoMenuOutline class="text-2xl"/>

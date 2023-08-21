@@ -8,6 +8,7 @@ import MainLayout from './layouts/MainLayout';
 import { ModalContextProvider } from './context/ModalContext';
 import { AssesModalContextProvider } from './context/AssesmentModal';
 import { ComplaintModalContextProvider } from './context/ComplaintContext';
+import { AuthContextProvider } from './context/AuthContext';
 
 const root = document.getElementById('root');
 
@@ -19,14 +20,16 @@ if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
 
 render(() =>(
   <Router> 
-    <ComplaintModalContextProvider>
-      <AssesModalContextProvider>
-        <ModalContextProvider>
-            <MainLayout>
-              <App />
-            </MainLayout>
-        </ModalContextProvider>
-      </AssesModalContextProvider>
-    </ComplaintModalContextProvider>
+    <AuthContextProvider>
+      <ComplaintModalContextProvider>
+        <AssesModalContextProvider>
+          <ModalContextProvider>
+              <MainLayout>
+                <App />
+              </MainLayout>
+          </ModalContextProvider>
+        </AssesModalContextProvider>
+      </ComplaintModalContextProvider>
+    </AuthContextProvider>
   </Router>
 ), root!);

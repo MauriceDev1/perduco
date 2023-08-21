@@ -1,21 +1,31 @@
-import { A } from "@solidjs/router";
+import { A, useNavigate } from "@solidjs/router";
 import { IoLogoFacebook, IoLogoGoogle } from "solid-icons/io";
 import { createSignal } from "solid-js";
+import useRegister from "../../hooks/useRegister";
+import cookie from "cookiejs";
+import { useAuthContext } from "../../context/AuthContext";
 
 const Register = () => {
     const [loading,setLoading] = createSignal(false);
     const [formData,setFormData] = createSignal({
-        username: '',
+        name: '',
+        surname: '',
         email: '',
         password: '',
-        repassword: '',
     });
     const [formDataError,setFormDataError] = createSignal({
-        username: '',
+        name: '',
+        surname: '',
         email: '',
         password: '',
-        repassword: '',
     });
+    const {registerUser} = useRegister();
+    const navigate = useNavigate();
+    const {
+        setIsAuth,
+        setUserId,
+        setUserEmail,
+    } = useAuthContext();
 
     const handleFormChange = (e: any) => {
         const {name,value} = e.currentTarget;
@@ -27,15 +37,31 @@ const Register = () => {
         setFormDataError((prv) => ({...prv,[name]:''}));
     };
 
-    const handleSubmitForm = (e: any) => {
+    const handleSubmitForm = async (e: any) => {
         e.preventDefault();
         const {
-            username,
+            name,
+            surname,
             email,
             password,
-            repassword,
         } = formData();
-        if(email === '' || password === ''){
+        if(name === '' || name.length < 3 || surname === '' || surname.length < 3 || email === '' || password === ''){
+            if(name === ''){
+                setFormDataError((prv) => ({...prv,name: 'Name is required!'}));
+            } else if (name.length < 3){
+                setFormData((prv) => ({...prv,name: ''}));
+                setTimeout(() => {
+                    setFormDataError((prv) => ({...prv,name: "Name can't be less than 2 characters !"}));
+                }, 10);
+            }
+            if(surname === ''){
+                setFormDataError((prv) => ({...prv,surname: 'Surname is required!'}));
+            } else if (surname.length < 3){
+                setFormData((prv) => ({...prv,surname: ''}));
+                setTimeout(() => {
+                    setFormDataError((prv) => ({...prv,surname: "Surname can't be less than 2 characters !"}));
+                }, 10);
+            }
             if(email === ''){
                 setFormDataError((prv) => ({...prv,email: 'Email is required!'}));
             }
@@ -43,18 +69,30 @@ const Register = () => {
                 setFormDataError((prv) => ({...prv,password: 'Password is required!'}));
             }
             return
+        };
+        
+        try {
+            setLoading(true);
+            const data = {
+                name: formData().name,
+                surname: formData().surname,
+                email: formData().email,
+                password: formData().password,
+            }
+            const result = await registerUser(data);
+            if(result.uid){
+                cookie.set('auth', 'true' ,2);
+                cookie.set('userId', result.uid ,2);
+                setIsAuth(true);
+                setUserId(result.uid);
+                setUserEmail(data.email);
+                setLoading(false);
+                navigate('/')
+            }
+        } catch (error) {
+            console.log(error)
         }
-        setLoading(true);
-        alert(JSON.stringify(formData()));
-        setTimeout(() => {
-            setLoading(false);
-            setFormData({
-                username: '',
-                email: '',
-                password: '',
-                repassword: '',
-            });
-        }, 2000);
+        setLoading(false)
     };
 
     return (
@@ -86,16 +124,30 @@ const Register = () => {
                 >
                     <div>
                         <p class="py-2 px-1 text-gray-500">
-                            Username
+                            Name
                         </p>
                         <input 
-                            name="username"
+                            name="name"
                             type="text"
-                            value={formData().username ? formData().username : ''}
+                            value={formData().name ? formData().name : ''}
                             onChange={handleFormChange}
                             onInput={handleFormErrorChange}
-                            placeholder={formDataError().username ? formDataError().username : 'Enter your username' }
-                            class={`${formDataError().username ? 'bg-red-50 border-red-400 placeholder:text-red-500' : '' } border w-full  rounded-sm h-9 outline-none px-2`}
+                            placeholder={formDataError().name ? formDataError().name : 'Enter your name' }
+                            class={`${formDataError().name ? 'bg-red-50 border-red-400 placeholder:text-red-500' : '' } border w-full  rounded-sm h-9 outline-none px-2`}
+                        />
+                    </div>
+                    <div>
+                        <p class="py-2 px-1 text-gray-500">
+                            Surname
+                        </p>
+                        <input 
+                            name="surname"
+                            type="text"
+                            value={formData().surname ? formData().surname : ''}
+                            onChange={handleFormChange}
+                            onInput={handleFormErrorChange}
+                            placeholder={formDataError().surname ? formDataError().surname : 'Enter your surname' }
+                            class={`${formDataError().surname ? 'bg-red-50 border-red-400 placeholder:text-red-500' : '' } border w-full  rounded-sm h-9 outline-none px-2`}
                         />
                     </div>
                     <div>
@@ -124,20 +176,6 @@ const Register = () => {
                             onInput={handleFormErrorChange}
                             placeholder={formDataError().password ? formDataError().password : 'Enter your password' }
                             class={`${formDataError().password ? 'bg-red-50 border-red-400 placeholder:text-red-500' : '' } border w-full  rounded-sm h-9 outline-none px-2`}
-                        />
-                    </div>
-                    <div>
-                        <p class="py-2 px-1 text-gray-500">
-                            Retype password
-                        </p>
-                        <input 
-                            name="repassword"
-                            type="password"
-                            value={formData().repassword ? formData().repassword : ''}
-                            onChange={handleFormChange}
-                            onInput={handleFormErrorChange}
-                            placeholder={formDataError().repassword ? formDataError().repassword : 'Retype your password' }
-                            class={`${formDataError().repassword ? 'bg-red-50 border-red-400 placeholder:text-red-500' : '' } border w-full  rounded-sm h-9 outline-none px-2`}
                         />
                     </div>
                     <button class="w-full mt-7 text-white flex h-10 bg-gray-900 rounded-sm">

@@ -1,8 +1,10 @@
+import AdminLayout from "../../layouts/AdminLayout";
+
 const Profile = () => {
     return (
-        <div>
-
-        </div>
+        <AdminLayout>
+            Profile
+        </AdminLayout>
     )
 }
 
