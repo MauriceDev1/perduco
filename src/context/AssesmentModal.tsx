@@ -5,16 +5,16 @@ interface ContextProps {
     setModalState: Setter<boolean>,
 }
 
-const ModalContext = createContext<ContextProps>();
+const assesModalContext = createContext<ContextProps>();
 
-export function ModalContextProvider(props: any) {
+export function AssesModalContextProvider(props: any) {
     const [ modalState, setModalState ] = createSignal(false);
 
     return (
-        <ModalContext.Provider value={{modalState, setModalState}}>
+        <assesModalContext.Provider value={{modalState, setModalState}}>
             {props.children}
-        </ModalContext.Provider>
+        </assesModalContext.Provider>
     )
 }
 
-export const useModalContext = () => useContext(ModalContext)!;
+export const useAssesModalContext = () => useContext(assesModalContext)!;
