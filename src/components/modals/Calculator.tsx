@@ -62,7 +62,12 @@ const Calculator: Component = () => {
                         max="100"
                         onChange={(e) => console.log(e.currentTarget.value)}
                     />
-                    <p>{hours()}</p>
+                    <p class="text-5xl pb-6 text-sky-500 font-semibold px-3">
+                        &pound; 0.00
+                    </p>
+                    <button class="h-10 px-5 bg-red-700 hover:bg-red-900 duration-500 rounded-sm text-white">
+                        Book A Case Assessment
+                    </button>
                 </div>
             </div>
         </div>

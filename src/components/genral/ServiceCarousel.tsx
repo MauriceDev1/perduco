@@ -34,7 +34,7 @@ const ServiceCarousel:Component = () => {
                             <h3 class="text-center py-2 text-xl">
                                 Child Law
                             </h3>
-                            <p class="px-5 text-center">
+                            <p class="px-5 text-center line-clamp-3">
                                 Changes made to the law in recent years have made 
                                 it harder for parents and grandparents to see their 
                                 children and grandchildren. The financial and emotional 
@@ -44,7 +44,7 @@ const ServiceCarousel:Component = () => {
                                 for our clients. We can help you find another, less painful 
                                 way to a resolution.
                             </p>
-                            <div class="w-full justify-center flex pt-3">
+                            <div class="w-full justify-center flex pt-5">
                                 <button class="h-9 px-5 bg-red-700 hover:bg-red-900 duration-500 rounded-sm text-white">
                                     Read More
                                 </button>
@@ -59,7 +59,7 @@ const ServiceCarousel:Component = () => {
                             <h3 class="text-center py-2 text-xl">
                                 Divorce and Finance
                             </h3>
-                            <p class="px-5 text-center">
+                            <p class="px-5 text-center line-clamp-3">
                                 One quarter of marriages in the UK end in divorce. This can 
                                 be costly, both emotionally and financially. We specialise 
                                 in both applying for and defending Divorce Petitions and 
@@ -70,7 +70,7 @@ const ServiceCarousel:Component = () => {
                                 who complete and assist with every aspect of your case until 
                                 completion.
                             </p>
-                            <div class="w-full justify-center flex pt-3">
+                            <div class="w-full justify-center flex pt-5">
                                 <button class="h-9 px-5 bg-red-700 hover:bg-red-900 duration-500 rounded-sm text-white">
                                     Read More
                                 </button>
@@ -85,14 +85,14 @@ const ServiceCarousel:Component = () => {
                             <h3 class="text-center py-2 text-xl">
                                 Domestic Violence
                             </h3>
-                            <p class="px-5 text-center">
+                            <p class="px-5 text-center line-clamp-3">
                                 Sadly, domestic violence is still a major threat to many people in 
                                 the UK and on the rise. We have specialists on hand to help you when 
                                 you feel helpless. To give you hope when you feel helpless. Experienced 
                                 women and men on our team can give you the tools you need to safeguard 
                                 both yourself and your loved ones.
                             </p>
-                            <div class="w-full justify-center flex pt-3">
+                            <div class="w-full justify-center flex pt-5">
                                 <button class="h-9 px-5 bg-red-700 hover:bg-red-900 duration-500 rounded-sm text-white">
                                     Read More
                                 </button>
@@ -107,14 +107,14 @@ const ServiceCarousel:Component = () => {
                             <h3 class="text-center py-2 text-xl">
                                 Un-married Seperation
                             </h3>
-                            <p class="px-5 text-center">
+                            <p class="px-5 text-center line-clamp-3">
                                 There is a common misconception that unmarried couples have 
                                 the same rights as married couples. This isn’t always the 
                                 case and we can explain why. Let us know your circumstances 
                                 and we can give you the advice you need to help you protect 
                                 yourself, your loved ones, and your financial assets.
                             </p>
-                            <div class="w-full justify-center flex pt-3">
+                            <div class="w-full justify-center flex pt-5">
                                 <button class="h-9 px-5 bg-red-700 hover:bg-red-900 duration-500 rounded-sm text-white">
                                     Read More
                                 </button>

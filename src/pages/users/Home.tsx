@@ -1,13 +1,13 @@
 import { Component, createSignal } from "solid-js";
-import MainHero from "../components/hero/MainHero";
-import Trusted from "../assets/img/shield.png"
-import PaymentPlan from "../assets/img/law.png"
-import PersonalSupport from "../assets/img/puzzle.png"
-import FixedFees from "../assets/img/judge.png"
+import MainHero from "../../components/hero/MainHero";
+import Trusted from "../../assets/img/shield.png"
+import PaymentPlan from "../../assets/img/law.png"
+import PersonalSupport from "../../assets/img/puzzle.png"
+import FixedFees from "../../assets/img/judge.png"
 import { IoAdd, IoRemove } from "solid-icons/io";
-import WhyBackgroundImage from "../assets/img/why.jpg"
-import ServiceCarousel from "../components/genral/ServiceCarousel";
-import Faqs from "../assets/img/Faqs.jpg"
+import WhyBackgroundImage from "../../assets/img/why.jpg"
+import ServiceCarousel from "../../components/genral/ServiceCarousel";
+import Faqs from "../../assets/img/Faqs.jpg"
 
 const Home: Component = () => {
     const [whyState,setWhyState] = createSignal('children');
@@ -61,7 +61,7 @@ const Home: Component = () => {
                     </div>
                 </div>
             </div>
-            <div class="w-full py-16 flex justify-center bg-gray-50">
+            <div class="w-full py-10 flex justify-center bg-gray-50">
                 <div class="w-10/12">
                     <h1 class="text-3xl text-center pb-10">
                         Why Choose Perduco Law?
@@ -201,7 +201,7 @@ const Home: Component = () => {
                     </div>
                 </div>
             </div>
-            <div class="w-full py-16 flex justify-center bg-gray-50">
+            <div class="w-full py-10 flex justify-center bg-gray-50">
                 <div class="w-10/12">
                     <h1 class="text-3xl text-center pb-6">
                         Our Areas of Expertise
@@ -209,7 +209,7 @@ const Home: Component = () => {
                     <ServiceCarousel />
                 </div>
             </div>
-            <div class="w-full pt-5 pb-16 flex justify-center bg-gray-50">
+            <div class="w-full py-10 pb-16 flex justify-center bg-gray-50">
                 <div class="w-10/12">
                     <div class="w-full">
                         <h1 class="text-3xl text-center">FAQ</h1>
@@ -346,7 +346,7 @@ const Home: Component = () => {
                     </div>
                 </div>
             </div>
-            <div class="w-full py-16 flex justify-center bg-gray-50">
+            <div class="w-full py-10 flex justify-center bg-gray-50">
                 <div class="w-10/12">
                     <h1 class="text-3xl text-center">
                         Take a look at what our clients say:

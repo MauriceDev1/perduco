@@ -1,7 +1,7 @@
 import { Component } from "solid-js";
-import InnerHero from "../components/hero/InnerHero";
-import TeamBackground from "../assets/img/team.jpg"
-import TeamIntro from "../assets/img/teamIntro.jpg"
+import InnerHero from "../../components/hero/InnerHero";
+import TeamBackground from "../../assets/img/team.jpg"
+import TeamIntro from "../../assets/img/teamIntro.jpg"
 
 const Team:Component = () => {
     return (

@@ -1,12 +1,12 @@
 import { Component } from "solid-js";
-import InnerHero from "../components/hero/InnerHero";
-import LegalImageOne from "../assets/img/aboutIntro.jpg"
-import AboutBackground from "../assets/img/pexels-cottonbro-studio-4098367.jpg"
-import DiffrentImage from "../assets/img/about_diffrent.jpg"
-import FatherDaughter from "../assets/img/fatherDaughter.jpg"
-import AboutDivorce from "../assets/img/aboutDivorce.jpg"
-import AboutDomestic from "../assets/img/aboutDomestic2.jpg"
-import AboutUnmarriedCouple from "../assets/img/unmarriedCouple.jpg"
+import InnerHero from "../../components/hero/InnerHero";
+import LegalImageOne from "../../assets/img/aboutIntro.jpg"
+import AboutBackground from "../../assets/img/pexels-cottonbro-studio-4098367.jpg"
+import DiffrentImage from "../../assets/img/about_diffrent.jpg"
+import FatherDaughter from "../../assets/img/fatherDaughter.jpg"
+import AboutDivorce from "../../assets/img/aboutDivorce.jpg"
+import AboutDomestic from "../../assets/img/aboutDomestic2.jpg"
+import AboutUnmarriedCouple from "../../assets/img/unmarriedCouple.jpg"
 
 const About: Component = () => {
     return (

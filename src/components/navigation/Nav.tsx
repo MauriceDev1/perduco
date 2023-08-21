@@ -9,6 +9,7 @@ const Nav: Component = () => {
     const [toggleMobileMenu,setToggleMobileMenu] = createSignal(false);
     const navigate = useNavigate();
     const {setModalState} = useModalContext()
+    const [serviceSection,setServiceSection] = createSignal(false)
 
     const Links = [
         {
@@ -88,7 +89,36 @@ const Nav: Component = () => {
                     <div class="lg:block hidden">
                         <ul class="w-full flex gap-12">
                             <For each={Links}>{
-                                (l) => l.name === 'Services' ? <button class="flex gap-2 items-center hover:text-red-600"><p>{l.name}</p><p class="pt-1"><IoChevronDownOutline /></p></button>: <A href={l.link}><li id="linksChange" data-replace={l.name}><span>{l.name}</span></li></A>
+                                (l) => l.name === 'Services' 
+                                    ? 
+                                        <button 
+                                            class="flex gap-2 items-center hover:text-red-600"
+                                            onMouseEnter={() => setServiceSection(true)}
+                                            onMouseLeave={() => setServiceSection(false)}
+                                        >
+                                            <p>
+                                                {l.name}
+                                            </p>
+                                            <p class="pt-1">
+                                                <IoChevronDownOutline />
+                                            </p>
+                        {serviceSection()
+                            ?
+                                <div class="w-full h-64 bg-white absolute left-0 mt-72">
+
+                                </div>
+                            :
+                                null
+                        }
+                                        </button>
+                                    : 
+                                        <A href={l.link}>
+                                            <li id="linksChange" data-replace={l.name}>
+                                                <span>
+                                                    {l.name}
+                                                </span>
+                                            </li>
+                                        </A>
                             }</For>
                         </ul>
                     </div>
@@ -99,12 +129,12 @@ const Nav: Component = () => {
                             <IoCalculatorOutline class="text-2xl mr-5" />
                         </button>
                         <A href="/login">
-                            <button class="border h-8 px-5 rounded-sm border-black">
+                            <button class="border h-8 px-6 rounded-sm border-black">
                                 Login
                             </button>
                         </A>
                         <A href="/register">
-                            <button class="border border-black h-8 px-5 text-white rounded-sm bg-black">
+                            <button class="border border-gray-900 h-8 px-6 text-white rounded-sm bg-gray-900">
                                 Register
                             </button>
                         </A>

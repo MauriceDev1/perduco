@@ -1,7 +1,7 @@
 import { Component, createSignal } from "solid-js";
-import InnerHero from "../components/hero/InnerHero";
-import ContactForm from "../components/forms/ContactForm";
-import ContactBackgroun from "../assets/img/contact.jpg"
+import InnerHero from "../../components/hero/InnerHero";
+import ContactForm from "../../components/forms/ContactForm";
+import ContactBackgroun from "../../assets/img/contact.jpg"
 import { IoAdd, IoRemove } from "solid-icons/io";
 
 const Contact:Component = () => {

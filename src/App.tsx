@@ -1,14 +1,14 @@
 import { Route, Router, Routes } from '@solidjs/router';
 import type { Component } from 'solid-js';
-import Home from './pages/Home';
-import About from './pages/About';
-import Contact from './pages/Contact';
-import Team from './pages/Team';
-import Login from './pages/Login';
-import Register from './pages/Register';
-import PrivacyPolicy from './pages/PrivacyPolicy';
-import ComplaintPolicy from './pages/ComplaintPolicy';
-import ForgotPassword from './pages/ForgotPassword';
+import Home from './pages/users/Home';
+import About from './pages/users/About';
+import Contact from './pages/users/Contact';
+import Team from './pages/users/Team';
+import Login from './pages/users/Login';
+import Register from './pages/users/Register';
+import PrivacyPolicy from './pages/users/PrivacyPolicy';
+import ComplaintPolicy from './pages/users/ComplaintPolicy';
+import ForgotPassword from './pages/users/ForgotPassword';
 import PageNotFound from './pages/PageNotFound';
 
 const App: Component = () => {
