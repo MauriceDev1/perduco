@@ -7,7 +7,7 @@ const AssesmentModal: Component = () => {
 
     return (
         <div class={`${modalState() ? 'flex' : 'hidden'} w-full fixed  h-screen top-0 left-0 bg-black z-50 bg-opacity-60`}>
-            <div class="m-auto w-11/12 relative lg:w-8/12 p-5 bg-white rounded-sm">
+            <div class="m-auto w-11/12 relative lg:w-6/12 p-5 bg-white rounded-sm">
                 <button 
                     class="absolute top-3 right-3 text-gray-500 hover:text-red-600"
                     onClick={() => setModalState(false)}

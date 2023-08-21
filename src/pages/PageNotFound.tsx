@@ -3,7 +3,7 @@ import Logo from "../assets/img/Perduco-Law-Logo.png"
 
 const PageNotFound:Component = () => {
     return (
-        <div class="w-full bg-gray-50 min-h-[80vh] flex">
+        <div class="w-full bg-gray-200 min-h-[80vh] flex">
             <div class="m-auto">
                 <img src={Logo} />
                 <div class="w-60 h-60 flex border mt-10 border-sky-400 bg-sky-50 text-sky-500 rounded-full">
