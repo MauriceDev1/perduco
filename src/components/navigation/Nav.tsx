@@ -128,7 +128,7 @@ const Nav: Component = () => {
                     </div>
                 </div>
             </div>
-            <nav class="w-full flex justify-center py-3 sticky top-0 bg-white shadow z-50 h-14">
+            <nav class="w-full flex justify-center py-3 sticky top-0 bg-white shadow z-30 h-14">
                 <div class="w-11/12 lg:w-10/12 flex justify-between items-center">
                     <A href="/">
                         <div>
